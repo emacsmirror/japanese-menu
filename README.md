@@ -1,5 +1,7 @@
 # japanese-menu.el (Emacs GUI menu Japanese translation)
 
+[![MELPA](https://melpa.org/packages/japanese-menu-badge.svg)](https://melpa.org/#/japanese-menu)
+
 ## License
 
 This package is licensed under GPL-3.0-or-later.
@@ -7,7 +9,8 @@ This package is licensed under GPL-3.0-or-later.
 
 EmacsのGUIメニュー（メニューバー / プルダウン / 右クリック等）を、
 英語ラベル → 日本語ラベルの辞書で置換します。  
-Debian / Ubuntu の Emacs（GUI）を主対象としています。
+macOS および Debian / Ubuntu の GNU Emacs（GUI）で動作確認しています。
+主に Emacs 30.x で検証しています。
 
 ---
 
