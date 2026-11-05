@@ -59,7 +59,15 @@ Emacsを再起動すると、日本語メニューが有効になります。
 
 ### 動作確認環境
 
-本パッケージは、以下の 実環境 で動作確認を行っています。
+### macOS（ネイティブ環境）
+
+- OS: macOS Tahoe 26.2
+- Emacs: GNU Emacs 30.2（GUI）
+- インストール方法: MELPA（package-install）
+- 動作確認: japanese-menu-setup の実行直後にGUIメニューが日本語化されることを確認
+- 検証条件: emacs -Q で起動した初期状態からインストール
+
+### Ubuntu（VMware Fusion仮想環境）
 
 Host OS: macOS Tahoe 26.2
 
