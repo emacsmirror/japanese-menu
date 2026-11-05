@@ -16,26 +16,48 @@ macOS および Debian / Ubuntu の GNU Emacs（GUI）で動作確認してい�
 
 ## 使い方
 
-### 1) ファイル配置（例）
+### MELPAからインストール（推奨）
+
+MELPAをパッケージ取得先に設定したGNU Emacsで、次を実行します。
+
+```text
+M-x package-refresh-contents RET
+M-x package-install RET japanese-menu RET
+```
+
+インストール後、`init.el` に次を追加します。
+
+```elisp
+(require 'japanese-menu)
+(japanese-menu-setup)
+```
+
+Emacsを再起動すると、日本語メニューが有効になります。
+
+### 手動インストール
+
+
+
+#### 1) ファイル配置（例）
 
 ~/.emacs.d/lisp/japanese-menu.el
 
 
-### 2) init.el に追記
+#### 2) init.el に追記
 
 ```elisp
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 (require 'japanese-menu)
 (japanese-menu-setup)
+```
 
-##3) 反映
+#### 3) 反映
 
-## Emacs を再起動
-## または
+ Emacs を再起動します。
 
-## init.el を M-x eval-buffer
+ または、 `init.el` を開いて　`M-x eval-buffer`　を実行します。
 
-動作確認環境
+### 動作確認環境
 
 本パッケージは、以下の 実環境 で動作確認を行っています。
 
