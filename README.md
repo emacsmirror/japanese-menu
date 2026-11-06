@@ -10,7 +10,7 @@ This package is licensed under GPL-3.0-or-later.
 EmacsのGUIメニュー（メニューバー / プルダウン / 右クリック等）を、
 英語ラベル → 日本語ラベルの辞書で置換します。  
 macOS、Windows 11 Pro および Ubuntu の GNU Emacs (GUI) で動作確認しています。
-主に Emacs 30.x で検証しています。
+GNU Emacs 30.1 および 30.2 で動作確認しています。
 ---
 
 ## 使い方
