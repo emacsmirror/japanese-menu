@@ -900,7 +900,7 @@ If FRAME is nil, use the selected frame."
 
   ;; セットアップ時にも現在のメニューを翻訳
     (japanese-menu-translate-current-menubar))
-
+;;;###autoload (progn (require 'japanese-menu) (japanese-menu-setup))
 (provide 'japanese-menu)
 ;;; japanese-menu.el ends here
 
