@@ -6,10 +6,9 @@
 Emacs の GUI メニュー（メニューバー / プルダウン / 右クリック等）を、
 英語ラベル → 日本語ラベルの辞書で置換します。
 
-macOS、Windows 11 Pro、Ubuntu の GNU Emacs (GUI) で動作確認しています。
-GNU Emacs 30.1 / 30.2 は実機の画面で、30.2 / 31.1 は GitHub Actions の自動テストで確認しています。
-詳細は「動作確認環境」を参照してください。
+GNU Emacs 30.1 / 30.2 / 31.1 は実機の画面で、30.2 / 31.1 は GitHub Actions の自動テストで確認しています。
 
+GNU Emacs 31.1 は、macOS では実機の画面で確認済みです。Windows 11 では、Smart App Control の制限のため、自動テストのみです。
 ---
 
 ## 使い方
@@ -64,10 +63,12 @@ Emacs を再起動します。
 
 - OS: macOS Tahoe 26.2
 - Emacs: GNU Emacs 30.2 (GUI)
+- Emacs: GNU Emacs 31.1 (GUI、Emacs for Mac OS X のユニバーサルバイナリ)
 - インストール方法: MELPA (package-install)
-- 動作確認: japanese-menu-setup の実行直後にGUIメニューが日本語化されることを確認
-- 検証条件: emacs -Q で起動した初期状態からインストール
+- 動作確認: パッケージのインストール直後にGUIメニューが日本語化され、再起動後も維持されることを確認
+- 検証条件: 31.1 は、設定なしの初期状態から MELPA でインストール
 
+  
 #### Windows（ネイティブ環境）
 
 - OS: Windows 11 Pro (Surface Laptop 4)
