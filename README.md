@@ -6,9 +6,9 @@
 Emacs の GUI メニュー（メニューバー / プルダウン / 右クリック等）を、
 英語ラベル → 日本語ラベルの辞書で置換します。
 
-GNU Emacs 30.1 / 30.2 / 31.1 は実機の画面で、30.2 / 31.1 は GitHub Actions の自動テストで確認しています。
+GNU Emacs 30.1 / 30.2 / 31.1 は実機の画面で確認しています。詳細は「動作確認環境」を参照してください。
 
-GNU Emacs 31.1 は、macOS では実機の画面で確認済みです。Windows 11 では、Smart App Control の制限のため、自動テストのみです。
+
 ---
 
 ## 使い方
@@ -22,7 +22,8 @@ M-x package-refresh-contents RET
 M-x package-install RET japanese-menu RET
 ```
 
-インストール後、`init.el` に次を追加します。
+インストールすると、日本語メニューが有効になります（Emacs を再起動しても維持されます）。
+有効にならない場合や、明示的に有効化したい場合は、`init.el` に次を追加します。
 
 ```elisp
 (require 'japanese-menu)
@@ -93,15 +94,29 @@ Emacs を再起動します。
   - GTK+ 3.24.50
   - cairo 1.18.4
   - Debian build (2025-08-28)
+ 
+#### Fedora Asahi Remix（ネイティブ環境）
+
+- OS: Fedora Linux Asahi Remix 45 (KDE Plasma Desktop Edition Prerelease)
+- Desktop Environment: KDE Plasma
+- Display Server: Wayland
+
+- Emacs: GNU Emacs 31.1 (GUI、Fedora 公式パッケージ emacs-31.1-8.fc45.aarch64)
+- インストール方法: MELPA (package-install)
+- 動作確認: パッケージのインストール直後にGUIメニューが日本語化されることを確認
+- 右クリックメニュー: Control + 右クリックで日本語化されることを確認
 
 ### 自動テスト（GitHub Actions）
 
 GitHub が提供する仮想環境（ubuntu-latest / macos-latest / windows-latest）で、
 GNU Emacs 30.2 と 31.1 に対して、バイトコンパイルと ERT テストを実行しています。
-メニューの日本語化が適用されることを、画面を出さずに確認するものです。
+
+ERT テストでは、メニューの日本語化が適用されることと、辞書に訳の食い違いがないことを、
+画面を出さずに確認しています。
 
 画面表示そのものの確認は、上の実機の環境で行っています。
-GNU Emacs 31.1 は、現時点では実機の画面では確認しておらず、自動テストのみです。
+GNU Emacs 31.1 は、macOS と Fedora では実機の画面で確認済みです。
+Windows 11 では、Smart App Control の制限のため、自動テストのみです。
 
 ---
 
