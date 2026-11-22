@@ -495,7 +495,6 @@
     ("Emacs Terminology" . "Emacs 用語集")
     ("Look Up Subject in User Manual..." . "ユーザーマニュアルで項目を調べる…")
     ("Look Up Subject in Elisp Manual..." . "Elispマニュアルで項目を調べる…")
-    ("Look Up Key in User Manual..." . "ユーザーマニュアルで鍵を調べる…")
     ("Look Up Command in User Manual..." . "ユーザーマニュアルでコマンドを調べる…")
     ("Look Up Symbol in Manual..." . "マニュアルでシンボルを調べる…")
     ("Find Commands by Name..." . "名前でコマンドを検索…")
@@ -582,7 +581,6 @@
     ;; Go to submenu
     ;; ---------------------------------------------------------
     ("Go to Node..." . "ノードへ移動…")
-    ("Table of Contents..." . "目次…")
     ("Go to Directory" . "ディレクトリへ移動")
 
     ;; ---------------------------------------------------------
@@ -595,8 +593,7 @@
 
     ;; ---- Info / Go to ----
     ("Table of Contents" . "目次…")
-    ("Table of Contents..." . "目次…")   ;; 既にあるなら上書きor統一
-
+    
     ;; ---- Info / Menu Item ----
     ("Info stand-alone" . "Infoスタンドアロン")
     ("info stand-alone" . "Infoスタンドアロン")
