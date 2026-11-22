@@ -1,16 +1,15 @@
 # japanese-menu.el (Emacs GUI menu Japanese translation)
 
 [![MELPA](https://melpa.org/packages/japanese-menu-badge.svg)](https://melpa.org/#/japanese-menu)
+[![test](https://github.com/yt-emacs-ja/emacs-japanese-menu/actions/workflows/test.yml/badge.svg)](https://github.com/yt-emacs-ja/emacs-japanese-menu/actions/workflows/test.yml)
 
-## License
+Emacs の GUI メニュー（メニューバー / プルダウン / 右クリック等）を、
+英語ラベル → 日本語ラベルの辞書で置換します。
 
-This package is licensed under GPL-3.0-or-later.
+macOS、Windows 11 Pro、Ubuntu の GNU Emacs (GUI) で動作確認しています。
+GNU Emacs 30.1 / 30.2 は実機の画面で、30.2 / 31.1 は GitHub Actions の自動テストで確認しています。
+詳細は「動作確認環境」を参照してください。
 
-
-EmacsのGUIメニュー（メニューバー / プルダウン / 右クリック等）を、
-英語ラベル → 日本語ラベルの辞書で置換します。  
-macOS、Windows 11 Pro および Ubuntu の GNU Emacs (GUI) で動作確認しています。
-GNU Emacs 30.1 および 30.2 で動作確認しています。
 ---
 
 ## 使い方
@@ -35,12 +34,11 @@ Emacsを再起動すると、日本語メニューが有効になります。
 
 ### 手動インストール
 
-
-
 #### 1) ファイル配置（例）
 
+```text
 ~/.emacs.d/lisp/japanese-menu.el
-
+```
 
 #### 2) init.el に追記
 
@@ -52,84 +50,81 @@ Emacsを再起動すると、日本語メニューが有効になります。
 
 #### 3) 反映
 
- Emacs を再起動します。
+Emacs を再起動します。
 
- または、 `init.el` を開いて　`M-x eval-buffer`　を実行します。
+または、`init.el` を開いて `M-x eval-buffer` を実行します。
 
-### 動作確認環境
+---
 
-### macOS（ネイティブ環境）
+## 動作確認環境
+
+### 実機（画面で目視）
+
+#### macOS（ネイティブ環境）
 
 - OS: macOS Tahoe 26.2
-- Emacs: GNU Emacs 30.2（GUI）
-- インストール方法: MELPA（package-install）
+- Emacs: GNU Emacs 30.2 (GUI)
+- インストール方法: MELPA (package-install)
 - 動作確認: japanese-menu-setup の実行直後にGUIメニューが日本語化されることを確認
 - 検証条件: emacs -Q で起動した初期状態からインストール
-  
-### Windows（ネイティブ環境）
 
-- OS: Windows 11 Pro（Surface Laptop 4）
-- Emacs: GNU Emacs 30.2（GUI、64ビット）
-- インストール方法: MELPA（package-install）
+#### Windows（ネイティブ環境）
+
+- OS: Windows 11 Pro (Surface Laptop 4)
+- Emacs: GNU Emacs 30.2 (GUI、64ビット)
+- インストール方法: MELPA (package-install)
 - 動作確認:
   - GUIメニューバーとプルダウンメニューの日本語化
   - Control + 右クリックによるポップアップメニューの日本語化
   - .emacs に設定を追加し、再起動後も自動的に日本語化されることを確認
-    
-### Ubuntu（VMware Fusion仮想環境）
 
-Host OS: macOS Tahoe 26.2
+#### Ubuntu（VMware Fusion仮想環境）
 
-Virtualization: VMware Fusion Professional 25H2 (VMware20,1)
+- Host OS: macOS Tahoe 26.2
+- Virtualization: VMware Fusion Professional 25H2 (VMware20,1)
+- Guest OS: Ubuntu 25.10 (aarch64)
+- Kernel: Linux 6.17.0-8-generic
+- Desktop Environment: GNOME 49.0
+- Display Server: Wayland (Mutter)
+- Emacs:
+  - GNU Emacs 30.1
+  - aarch64-unknown-linux-gnu
+  - GTK+ 3.24.50
+  - cairo 1.18.4
+  - Debian build (2025-08-28)
 
-Guest OS: Ubuntu 25.10 (aarch64)
+### 自動テスト（GitHub Actions）
 
-Kernel: Linux 6.17.0-8-generic
+GitHub が提供する仮想環境（ubuntu-latest / macos-latest / windows-latest）で、
+GNU Emacs 30.2 と 31.1 に対して、バイトコンパイルと ERT テストを実行しています。
+メニューの日本語化が適用されることを、画面を出さずに確認するものです。
 
-Desktop Environment: GNOME 49.0
-
-Display Server: Wayland (Mutter)
-
-Emacs:
-
-GNU Emacs 30.1
-
-aarch64-unknown-linux-gnu
-
-GTK+ 3.24.50
-
-cairo 1.18.4
-
-Debian build (2025-08-28)
-
-確認済み内容
-
-メニューバー（File / Edit / Options / Tools / Help）
-
-プルダウンメニュー
-
-モード固有メニュー（Info-mode 等）
-
-右クリックメニュー（popup-menu / x-popup-menu）
-
-注意
-
-端末版 Emacs（emacs -nw）は GUI メニューが存在しないため対象外です
-
-メニューラベルは Emacs / パッケージのバージョンにより表記揺れがあります
-必要に応じて辞書を追加してください
-
+画面表示そのものの確認は、上の実機の環境で行っています。
+GNU Emacs 31.1 は、現時点では実機の画面では確認しておらず、自動テストのみです。
 
 ---
+
+## 確認済み内容
+
+- メニューバー (File / Edit / Options / Tools / Help)
+- プルダウンメニュー
+- モード固有メニュー (Info-mode 等)
+- 右クリックメニュー (popup-menu / x-popup-menu)
+
+## 注意
+
+- 端末版 Emacs (`emacs -nw`) は GUI メニューが存在しないため対象外です。
+- メニューラベルは Emacs / パッケージのバージョンにより表記揺れがあります。
+  必要に応じて辞書を追加してください。
+
+---
+
+## License
+
+This package is licensed under GPL-3.0-or-later.
 
 ## Links
 
 - GitHub repository: https://github.com/yt-emacs-ja/emacs-japanese-menu
 - GitHub Releases: https://github.com/yt-emacs-ja/emacs-japanese-menu/releases
 - EmacsWiki: https://www.emacswiki.org/emacs/japanese-menu
-
-
-
-
-
-
